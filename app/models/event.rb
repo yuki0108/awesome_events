@@ -5,6 +5,10 @@ class Event < ApplicationRecord
   validates :start_at, presence: true
   validates :end_at, presence: true
 
+  def created_by?(user)
+    return false unless user
+  end
+
   private
 
   def start_at_should_be_before_end_at

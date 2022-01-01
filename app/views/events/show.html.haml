@@ -16,3 +16,5 @@
     .card.mb-2
       %h5.card-header 主催者
       %p #{@event.name}
+  .col-4
+    = link_to "イベントを編集する", edit_event_path(@event.id), class: "btn btn-info btn-lg btn-block"

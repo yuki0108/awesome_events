@@ -25,6 +25,12 @@ class EventsController < ApplicationController
     redirect_to @event, notice: "更新しました"
   end
 
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy!
+    redirect_to root_path, notice: "削除しました"
+  end
+
   private
 
   def event_params
